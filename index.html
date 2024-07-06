@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel=stylesheet href="styles.css">
+</head>
+<body>
+        <div class="todo">
+            <h1>To-Do List</h1>
+            <div class="row">
+                <input type="text" id="input_box" placeholder="Add a Task">
+                <select id="priority_select">
+                    <option value="" disabled selected>Priority</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="imp">Important</option>
+                    <option value="misc">Miscellaneous</option>
+                </select>
+                <select id="department_select">
+                    <option value="" disabled selected>Department</option>
+                    <option value="add_new">Add New</option>
+                </select>
+                <button onclick="addTask()">ADD</button>
+            </div>
+            <div class="modify" id="modify-buttons" style="display: none;">
+                <button onclick="deleteDepartment()">DELETE</button>
+                <button onclick="renameDepartment()">RENAME</button>
+            </div>
+            <div class="list">
+            <ul id="list_container">
+                <!--<li class="checked">task 1</li>-->
+                
+            </ul>
+            </div>
+            
+            <div class="filter-sort-container">
+                <select id="filter-options">
+                    <option value="" disabled selected>Filter by</option>
+                    <option value="all">All Tasks</option>
+                    <option value="department">Department</option>
+                    <option value="priority">Priority</option>
+                    <option value="today">Today</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+                <button id="submit-btn" onclick="applyFilterSort()">SUBMIT</button>
+                <select id="sort-options">
+                    <option value="" disabled selected>Sort by</option>
+                    <option value="date-asc">Sort by Date: Ascending</option>
+                    <option value="date-desc">Sort by Date: Descending</option>
+                </select>
+            </div>
+        </div>
+        <div class="theme-selector" onmouseleave="collapseThemes()">
+            <button class="theme-button" onclick="toggleThemes()">Theme</button>
+            <div class="theme-options">
+                <button class="color-button" onclick="changeTheme('theme1')" style="background-color: #ff649d;"></button>
+                <button class="color-button" onclick="changeTheme('theme2')" style="background-color: #2a0237;"></button>
+            </div>
+        </div>
+        
+        
+
+        <script src="script.js"></script>
+</body>
+</html>
